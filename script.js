@@ -71,3 +71,12 @@ todoList.addTodo("Test 2");
 // todoList.toggleCompleted(0)
 // todoList.toggleCompleted(1)
 todoList.toggleAll();
+
+//===================================================
+// OBJECT COMPARISONS
+
+// var myHouse1 = { color: "blue" };
+// var myHouse2 = { color: "blue" };
+// myHouse2.color = "red";
+// console.log(myHouse1); //blue
+// console.log(myHouse2); //red
