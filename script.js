@@ -1,12 +1,20 @@
-const button1 = document.getElementById("button1");
-const button2 = document.getElementById("button2");
+const dispTodosBtn = document.getElementById("dispTodosBtn");
+const toggleAllBtn = document.getElementById("toggleAllBtn");
+const btnDisplay = document.getElementById("btnDisplay");
 
-console.log(button1);
-console.log(button2);
+dispTodosBtn.addEventListener("click", () => {
+  dispTodosBtn.classList.toggle("active");
+  todoList.displayTodos();
+  for (i = 0; i < todoList.todos.length; i++) {
+    btnDisplay.innerHTML = todoList.todos[i].todoText;
+  }
+});
 
-// clickBtn1 = () => {
-//   if (button1 = )
-// }
+toggleAllBtn.addEventListener("click", () => {
+  toggleAllBtn.classList.toggle("active");
+  todoList.toggleAll();
+  todoList.displayTodos();
+});
 
 let todoList = {
   todos: [],
@@ -14,9 +22,7 @@ let todoList = {
     if (this.todos.length === 0) {
       console.log("Your Todo List Is Empty");
     } else {
-      // console.log(this.todos)
       for (i = 0; i < this.todos.length; i++) {
-        // console.log(this.todos[i].todoText)
         if (this.todos[i].completed === true) {
           console.log("(X)", this.todos[i].todoText);
         } else {
@@ -52,16 +58,11 @@ let todoList = {
     for (i = 0; i < totalTodos; i++) {
       if (this.todos[i].completed === true) {
         completedTodos++;
-        console.log("current Completion before: ", this.todos[i].completed);
       }
     }
     if (completedTodos === totalTodos) {
       for (i = 0; i < totalTodos; i++) {
         this.todos[i].completed = false;
-        console.log(
-          "current Completion after toggle: ",
-          this.todos[i].completed
-        );
       }
     } else {
       for (i = 0; i < totalTodos; i++) {
@@ -73,10 +74,10 @@ let todoList = {
 };
 
 todoList.addTodo("Test 1");
-todoList.addTodo("Test 2");
-// todoList.toggleCompleted(0)
-// todoList.toggleCompleted(1)
-todoList.toggleAll();
+// todoList.addTodo("Test 2");
+// // todoList.toggleCompleted(0)
+// // todoList.toggleCompleted(1)
+// todoList.toggleAll();
 
 //===================================================
 // OBJECT COMPARISONS
