@@ -20,5 +20,6 @@ button {
   cursor: pointer;
   box-shadow: 0 2px 5px hsl(0, 0%, 40%);
   text-transform: uppercase;
-  letter-spacing: 0.04rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
 }

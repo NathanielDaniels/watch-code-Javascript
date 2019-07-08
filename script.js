@@ -1,6 +1,12 @@
-// const button = document.getElementById('button').innerText
+const button1 = document.getElementById("button1");
+const button2 = document.getElementById("button2");
 
-// button
+console.log(button1);
+console.log(button2);
+
+// clickBtn1 = () => {
+//   if (button1 = )
+// }
 
 let todoList = {
   todos: [],
