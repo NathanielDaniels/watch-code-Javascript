@@ -52,7 +52,6 @@ let todoList = {
     this.displayTodos();
   },
   toggleAll: function() {
-    debugger;
     let totalTodos = this.todos.length;
     let completedTodos = 0;
 
