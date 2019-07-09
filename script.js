@@ -32,7 +32,6 @@ let todoList = {
     }
   },
   addTodo: function(todoText) {
-    debugger;
     this.todos.push({
       todoText: todoText,
       completed: false
@@ -53,6 +52,7 @@ let todoList = {
     this.displayTodos();
   },
   toggleAll: function() {
+    debugger;
     let totalTodos = this.todos.length;
     let completedTodos = 0;
 
@@ -75,10 +75,12 @@ let todoList = {
 };
 
 todoList.addTodo("Test 1");
+todoList.addTodo("Test 2");
+// todoList.deleteTodo(1);
 // todoList.addTodo("Test 2");
 // todoList.toggleCompleted(0);
 // todoList.toggleCompleted(1)
-// todoList.toggleAll();
+todoList.toggleAll();
 
 //===================================================
 // OBJECT COMPARISONS
