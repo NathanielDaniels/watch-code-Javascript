@@ -54,7 +54,6 @@ let todoList = {
   toggleAll: function() {
     let totalTodos = this.todos.length;
     let completedTodos = 0;
-
     for (i = 0; i < totalTodos; i++) {
       if (this.todos[i].completed === true) {
         completedTodos++;
