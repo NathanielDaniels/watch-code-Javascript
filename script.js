@@ -79,7 +79,7 @@ todoList.addTodo("Test 2");
 // todoList.addTodo("Test 2");
 // todoList.toggleCompleted(0);
 // todoList.toggleCompleted(1)
-todoList.toggleAll();
+// todoList.toggleAll();
 
 //===================================================
 // OBJECT COMPARISONS
