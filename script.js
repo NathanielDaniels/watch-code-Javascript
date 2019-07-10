@@ -74,9 +74,7 @@ let todoList = {
 };
 
 todoList.addTodo("Test 1");
-todoList.addTodo("Test 2");
-// todoList.deleteTodo(1);
 // todoList.addTodo("Test 2");
 // todoList.toggleCompleted(0);
 // todoList.toggleCompleted(1)
-todoList.toggleAll();
+// todoList.toggleAll();
