@@ -1,20 +1,17 @@
-const dispTodosBtn = document.getElementById("dispTodosBtn");
-const toggleAllBtn = document.getElementById("toggleAllBtn");
 const btnDisplay = document.getElementById("btnDisplay");
 
-dispTodosBtn.addEventListener("click", () => {
-  dispTodosBtn.classList.toggle("active");
-  todoList.displayTodos();
-  for (i = 0; i < todoList.todos.length; i++) {
-    btnDisplay.innerHTML = todoList.todos[i].todoText;
+var handlers = {
+  displayTodos: function() {
+    todoList.displayTodos();
+    for (i = 0; i < todoList.todos.length; i++) {
+      btnDisplay.innerHTML = todoList.todos[i].todoText;
+    }
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+    todoList.displayTodos();
   }
-});
-
-toggleAllBtn.addEventListener("click", () => {
-  toggleAllBtn.classList.toggle("active");
-  todoList.toggleAll();
-  todoList.displayTodos();
-});
+};
 
 let todoList = {
   todos: [],
@@ -36,6 +33,7 @@ let todoList = {
       todoText: todoText,
       completed: false
     });
+
     this.displayTodos();
   },
   changeTodo: function(position, todoText) {
