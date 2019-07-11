@@ -10,6 +10,10 @@ var handlers = {
   toggleAll: function() {
     todoList.toggleAll();
     todoList.displayTodos();
+  },
+  addTodo: function() {
+    let textInput = document.getElementById("addTodoTextInput");
+    todoList.addTodo(addTodoTextInput.value);
   }
 };
 
@@ -71,7 +75,7 @@ let todoList = {
   }
 };
 
-todoList.addTodo("Test 1");
+// todoList.addTodo("Test 1");
 // todoList.addTodo("Test 2");
 // todoList.toggleCompleted(0);
 // todoList.toggleCompleted(1)
