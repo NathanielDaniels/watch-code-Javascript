@@ -11,15 +11,7 @@ var handlers = {
         btnDisplay.innerHTML = todoList.todos[i].todoText;
       }
     }
-  },
-  toggleAll: function() {
-    if (todoList.todos.length === 0) {
-      btnDisplay.innerHTML = "Can't Toggle Nothing!";
-    } else {
-      todoList.toggleAll();
-      todoList.displayTodos();
-      btnDisplay.innerHTML = "Toggled All!";
-    }
+    // btnDisplay.innerHTML = todoList.todos[i].todoText;
   },
   addTodo: function() {
     const textInput = document.getElementById("addTodoTextInput");
@@ -46,6 +38,15 @@ var handlers = {
 
     todoList.toggleCompleted(toggleTodoPosition.valueAsNumber);
     toggleTodoPosition.value = "";
+  },
+  toggleAll: function() {
+    if (todoList.todos.length === 0) {
+      btnDisplay.innerHTML = "Can't Toggle Nothing!";
+    } else {
+      todoList.toggleAll();
+      todoList.displayTodos();
+      btnDisplay.innerHTML = "Toggled All!";
+    }
   }
 };
 
