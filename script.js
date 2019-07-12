@@ -11,7 +11,6 @@ var handlers = {
         btnDisplay.innerHTML = todoList.todos[i].todoText;
       }
     }
-    // btnDisplay.innerHTML = todoList.todos[i].todoText;
   },
   toggleAll: function() {
     if (todoList.todos.length === 0) {
