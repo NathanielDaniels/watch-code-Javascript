@@ -11,7 +11,6 @@ var handlers = {
         btnDisplay.innerHTML = todoList.todos[i].todoText;
       }
     }
-    // btnDisplay.innerHTML = todoList.todos[i].todoText;
   },
   addTodo: function() {
     const textInput = document.getElementById("addTodoTextInput");
@@ -46,6 +45,18 @@ var handlers = {
       todoList.toggleAll();
       todoList.displayTodos();
       btnDisplay.innerHTML = "Toggled All!";
+    }
+  }
+};
+
+let views = {
+  displayTodos: function() {
+    let todoUl = document.getElementById("displayList");
+    todoUl.innerHTML = "";
+    for (i = 0; i < todoList.todos.length; i++) {
+      let todoLi = document.createElement("li");
+      todoLi.textContent = todoList.todos[i].todoText;
+      todoUl.appendChild(todoLi);
     }
   }
 };
