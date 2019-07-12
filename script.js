@@ -3,17 +3,50 @@ const btnDisplay = document.getElementById("btnDisplay");
 var handlers = {
   displayTodos: function() {
     todoList.displayTodos();
-    for (i = 0; i < todoList.todos.length; i++) {
-      btnDisplay.innerHTML = todoList.todos[i].todoText;
+
+    if (todoList.todos.length === 0) {
+      btnDisplay.innerHTML = "Todo List Is Empty, Please Add Todo";
+    } else {
+      for (i = 0; i < todoList.todos.length; i++) {
+        btnDisplay.innerHTML = todoList.todos[i].todoText;
+      }
     }
+    // btnDisplay.innerHTML = todoList.todos[i].todoText;
   },
   toggleAll: function() {
-    todoList.toggleAll();
-    todoList.displayTodos();
+    if (todoList.todos.length === 0) {
+      btnDisplay.innerHTML = "Can't Toggle Nothing!";
+    } else {
+      todoList.toggleAll();
+      todoList.displayTodos();
+      btnDisplay.innerHTML = "Toggled All!";
+    }
   },
   addTodo: function() {
-    let textInput = document.getElementById("addTodoTextInput");
-    todoList.addTodo(addTodoTextInput.value);
+    const textInput = document.getElementById("addTodoTextInput");
+    todoList.addTodo(textInput.value);
+    textInput.value = "";
+  },
+  changeTodo: function() {
+    const changeTodoPosition = document.getElementById("changeTodoPosition");
+    const changeTodoText = document.getElementById("changeTodoTextInput");
+
+    todoList.changeTodo(changeTodoPosition.valueAsNumber, changeTodoText.value);
+    // Clear Input
+    changeTodoPosition.value = "";
+    changeTodoText.value = "";
+  },
+  deleteTodo: function() {
+    const deleteTodoPosition = document.getElementById("deleteTodoPosition");
+
+    todoList.deleteTodo(deleteTodoPosition.valueAsNumber);
+    deleteTodoPosition.value = "";
+  },
+  toggleTodo: function() {
+    const toggleTodoPosition = document.getElementById("toggleTodoPosition");
+
+    todoList.toggleCompleted(toggleTodoPosition.valueAsNumber);
+    toggleTodoPosition.value = "";
   }
 };
 

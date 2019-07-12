@@ -10,23 +10,45 @@
   <body>
     <h1>Javascript</h1>
 
-    <div class="buttons">
-      <button onclick="handlers.displayTodos()">
-        Display Todos
-      </button>
-      <button onclick="handlers.toggleAll()">Toggle All</button>
-    </div>
-
-    <div>
-      <button onclick="handlers.addTodo()">Add</button>
-      <input id="addTodoTextInput" type="text" />
-    </div>
+    <ul>
+      <li>
+        <div class="buttons">
+          <button onclick="handlers.displayTodos()">
+            Display Todos
+          </button>
+          <button onclick="handlers.toggleAll()">Toggle All</button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button onclick="handlers.addTodo()">Add</button>
+          <input id="addTodoTextInput" type="text" />
+        </div>
+      </li>
+      <li>
+        <div>
+          <button onclick="handlers.changeTodo()">Change Todo</button>
+          <input id="changeTodoPosition" type="number" />
+          <input id="changeTodoTextInput" type="text" />
+        </div>
+      </li>
+      <li>
+        <div>
+          <button onclick="handlers.deleteTodo()">Delete Todo</button>
+          <input id="deleteTodoPosition" type="number" />
+          <!-- <input id="changeTodoTextInput" type="text" /> -->
+        </div>
+      </li>
+      <li>
+        <div>
+          <button onclick="handlers.toggleTodo()">Toggle Todo</button>
+          <input id="toggleTodoPosition" type="number" />
+          <!-- <input id="changeTodoTextInput" type="text" /> -->
+        </div>
+      </li>
+    </ul>
 
     <div class="btnDisplay" id="btnDisplay">Click 'Display Todos'</div>
-
-    <div class="inputs">
-      <h3>Add Todo</h3>
-    </div>
 
     <script src="script.js"></script>
   </body>
