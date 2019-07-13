@@ -1,21 +1,11 @@
 const btnDisplay = document.getElementById("btnDisplay");
 
 var handlers = {
-  displayTodos: function() {
-    todoList.displayTodos();
-
-    if (todoList.todos.length === 0) {
-      btnDisplay.innerHTML = "Todo List Is Empty, Please Add Todo";
-    } else {
-      for (i = 0; i < todoList.todos.length; i++) {
-        btnDisplay.innerHTML = todoList.todos[i].todoText;
-      }
-    }
-  },
   addTodo: function() {
     const textInput = document.getElementById("addTodoTextInput");
     todoList.addTodo(textInput.value);
     textInput.value = "";
+    views.displayTodos();
   },
   changeTodo: function() {
     const changeTodoPosition = document.getElementById("changeTodoPosition");
@@ -25,18 +15,21 @@ var handlers = {
     // Clear Input
     changeTodoPosition.value = "";
     changeTodoText.value = "";
+    views.displayTodos();
   },
   deleteTodo: function() {
     const deleteTodoPosition = document.getElementById("deleteTodoPosition");
 
     todoList.deleteTodo(deleteTodoPosition.valueAsNumber);
     deleteTodoPosition.value = "";
+    views.displayTodos();
   },
   toggleTodo: function() {
     const toggleTodoPosition = document.getElementById("toggleTodoPosition");
 
     todoList.toggleCompleted(toggleTodoPosition.valueAsNumber);
     toggleTodoPosition.value = "";
+    views.displayTodos();
   },
   toggleAll: function() {
     if (todoList.todos.length === 0) {
@@ -46,6 +39,7 @@ var handlers = {
       todoList.displayTodos();
       btnDisplay.innerHTML = "Toggled All!";
     }
+    views.displayTodos();
   }
 };
 
@@ -53,9 +47,27 @@ let views = {
   displayTodos: function() {
     let todoUl = document.getElementById("displayList");
     todoUl.innerHTML = "";
+
+    if (todoList.todos.length === 0) {
+      displayList.innerHTML = "Todo List Is Empty, Please Add Todo";
+    } else {
+      for (i = 0; i < todoList.todos.length; i++) {
+        btnDisplay.innerHTML = todoList.todos[i].todoText;
+      }
+    }
+
     for (i = 0; i < todoList.todos.length; i++) {
       let todoLi = document.createElement("li");
-      todoLi.textContent = todoList.todos[i].todoText;
+      let todo = todoList.todos[i];
+      var todoTextWithCompletion = "";
+
+      if (todo.completed === true) {
+        todoTextWithCompletion = `(x) ${todo.todoText}`;
+      } else {
+        todoTextWithCompletion = `( ) ${todo.todoText}`;
+      }
+
+      todoLi.textContent = todoTextWithCompletion;
       todoUl.appendChild(todoLi);
     }
   }
