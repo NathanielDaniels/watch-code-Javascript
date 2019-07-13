@@ -1,5 +1,3 @@
-const btnDisplay = document.getElementById("btnDisplay");
-
 var handlers = {
   addTodo: function() {
     const textInput = document.getElementById("addTodoTextInput");
@@ -33,11 +31,11 @@ var handlers = {
   },
   toggleAll: function() {
     if (todoList.todos.length === 0) {
-      btnDisplay.innerHTML = "Can't Toggle Nothing!";
+      displayList.innerHTML = "Can't Toggle Nothing!";
     } else {
       todoList.toggleAll();
       todoList.displayTodos();
-      btnDisplay.innerHTML = "Toggled All!";
+      displayList.innerHTML = "Toggled All!";
     }
     views.displayTodos();
   }
@@ -48,12 +46,9 @@ let views = {
     let todoUl = document.getElementById("displayList");
     todoUl.innerHTML = "";
 
+    // If No Todos, display Empty Message
     if (todoList.todos.length === 0) {
       displayList.innerHTML = "Todo List Is Empty, Please Add Todo";
-    } else {
-      for (i = 0; i < todoList.todos.length; i++) {
-        btnDisplay.innerHTML = todoList.todos[i].todoText;
-      }
     }
 
     for (i = 0; i < todoList.todos.length; i++) {
@@ -130,9 +125,3 @@ let todoList = {
     this.displayTodos();
   }
 };
-
-// todoList.addTodo("Test 1");
-// todoList.addTodo("Test 2");
-// todoList.toggleCompleted(0);
-// todoList.toggleCompleted(1)
-// todoList.toggleAll();
