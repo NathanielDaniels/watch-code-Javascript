@@ -116,3 +116,43 @@ let views = {
     }
   }
 };
+
+// runWithDebugger(
+//   (logTenNumbers = () => {
+//     for (i = 0; i < 10; i++) {
+//       console.log(i);
+//     }
+//   })
+// );
+
+// runWithDebugger = myFunction => {
+//   debugger;
+//   myFunction();
+// };
+
+// setTimeout(function() {
+//   console.log("Wake up");
+// }, 4000);
+
+var students = ["Nathan", "Billy", "steve"];
+
+students.forEach(
+  (logName = name => {
+    console.log(name);
+  })
+);
+console.log("================");
+students.push("Stanley");
+students.forEach(logName);
+
+console.log("================");
+
+function forEach(myArray, myFunction) {
+  for (var i = 0; i < myArray.length; i++) {
+    myFunction(myArray[i]);
+  }
+}
+
+forEach(students, function(student) {
+  console.log(student);
+});

@@ -69,9 +69,7 @@ input {
 .listContainer {
   display: flex;
   justify-content: center;
-  position: relative;
-  left: -50px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 li {
