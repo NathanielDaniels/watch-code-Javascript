@@ -134,25 +134,34 @@ let views = {
 //   console.log("Wake up");
 // }, 4000);
 
-var students = ["Nathan", "Billy", "steve"];
+// var students = ["Nathan", "Billy", "steve"];
 
-students.forEach(
-  (logName = name => {
-    console.log(name);
-  })
-);
-console.log("================");
-students.push("Stanley");
-students.forEach(logName);
+// students.forEach(
+//   (logName = name => {
+//     console.log(name);
+//   })
+// );
+// console.log("================");
+// students.push("Stanley");
+// students.forEach(logName);
 
-console.log("================");
+// console.log("================");
 
-function forEach(myArray, myFunction) {
-  for (var i = 0; i < myArray.length; i++) {
-    myFunction(myArray[i]);
-  }
-}
+// function forEach(myArray, myFunction) {
+//   for (var i = 0; i < myArray.length; i++) {
+//     myFunction(myArray[i]);
+//   }
+// }
 
-forEach(students, function(student) {
-  console.log(student);
-});
+// forEach(students, function(student) {
+//   console.log(student);
+// });
+
+// console.log("================");
+// forEach(students, logName);
+
+multiplyTwoNumbers = (a, b) => {
+  return a * b;
+};
+
+var theProductOf2And10 = multiplyTwoNumbers(2, 10);
