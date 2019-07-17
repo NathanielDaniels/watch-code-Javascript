@@ -112,8 +112,16 @@ let views = {
       }
 
       todoLi.textContent = todoTextWithCompletion;
+      todoLi.appendChild(this.createDeleteBtn());
       todoUl.appendChild(todoLi);
     }
+  },
+  createDeleteBtn: function() {
+    var deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.className = "deleteBtn";
+
+    return deleteButton;
   }
 };
 
@@ -160,8 +168,8 @@ let views = {
 // console.log("================");
 // forEach(students, logName);
 
-multiplyTwoNumbers = (a, b) => {
-  return a * b;
-};
+// multiplyTwoNumbers = (a, b) => {
+//   return a * b;
+// };
 
-var theProductOf2And10 = multiplyTwoNumbers(2, 10);
+// var theProductOf2And10 = multiplyTwoNumbers(2, 10);
