@@ -20,19 +20,20 @@ let todoList = {
     let totalTodos = this.todos.length;
     let completedTodos = 0;
 
-    for (i = 0; i < totalTodos; i++) {
-      if (this.todos[i].completed === true) {
+    this.todos.forEach(function(todo) {
+      if (todo.completed === true) {
         completedTodos++;
       }
-    }
+    });
+
     if (completedTodos === totalTodos) {
-      for (i = 0; i < totalTodos; i++) {
-        this.todos[i].completed = false;
-      }
+      this.todos.forEach(function(todo) {
+        todo.completed = false;
+      });
     } else {
-      for (i = 0; i < totalTodos; i++) {
-        this.todos[i].completed = true;
-      }
+      this.todos.forEach(function(todo) {
+        todo.completed = true;
+      });
     }
   }
 };
@@ -58,15 +59,12 @@ var handlers = {
     changeTodoText.value = "";
     views.displayTodos();
   },
-  deleteTodo: function() {
-    const deleteTodoPosition = document.getElementById("deleteTodoPosition");
-
+  deleteTodo: function(position) {
     if (todoList.todos.length === 0) {
       displayList.innerHTML = "Todo List Is Empty, Nothing To Delete";
     }
 
-    todoList.deleteTodo(deleteTodoPosition.valueAsNumber);
-    deleteTodoPosition.value = "";
+    todoList.deleteTodo(position);
     views.displayTodos();
   },
   toggleTodo: function() {
@@ -123,13 +121,20 @@ let views = {
     deleteButton.className = "deleteBtn";
 
     return deleteButton;
+  },
+  setupEventListeners: function() {
+    var todosUl = document.querySelector("ul");
+    todosUl.addEventListener("click", function(event) {
+      let elementClicked = event.target;
+
+      if (elementClicked.className === "deleteBtn") {
+        handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+      }
+    });
   }
 };
 
-var todosUl = document.querySelector("ul");
-todosUl.addEventListener("click", function(event) {
-  console.log(event.target.parentNode.id);
-});
+views.setupEventListeners();
 
 // runWithDebugger(
 //   (logTenNumbers = () => {
