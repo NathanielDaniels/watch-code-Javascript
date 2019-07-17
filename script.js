@@ -111,6 +111,7 @@ let views = {
         todoTextWithCompletion = `( ) ${todo.todoText}`;
       }
 
+      todoLi.id = i;
       todoLi.textContent = todoTextWithCompletion;
       todoLi.appendChild(this.createDeleteBtn());
       todoUl.appendChild(todoLi);
@@ -124,6 +125,11 @@ let views = {
     return deleteButton;
   }
 };
+
+var todosUl = document.querySelector("ul");
+todosUl.addEventListener("click", function(event) {
+  console.log(event.target.parentNode.id);
+});
 
 // runWithDebugger(
 //   (logTenNumbers = () => {
