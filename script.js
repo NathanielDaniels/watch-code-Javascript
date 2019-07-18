@@ -26,15 +26,24 @@ let todoList = {
       }
     });
 
-    if (completedTodos === totalTodos) {
-      this.todos.forEach(function(todo) {
+    //* This is the same as the forEach() below
+    // if (completedTodos === totalTodos) {
+    //   this.todos.forEach(function(todo) {
+    //     todo.completed = false;
+    //   });
+    // } else {
+    //   this.todos.forEach(function(todo) {
+    //     todo.completed = true;
+    //   });
+    // }
+
+    this.todos.forEach(function(todo) {
+      if (completedTodos === totalTodos) {
         todo.completed = false;
-      });
-    } else {
-      this.todos.forEach(function(todo) {
+      } else {
         todo.completed = true;
-      });
-    }
+      }
+    });
   }
 };
 
@@ -44,6 +53,11 @@ var handlers = {
     todoList.addTodo(textInput.value);
     textInput.value = "";
     views.displayTodos();
+    // console.log(textInput.innerText);
+
+    // if (textInput.value === "") {
+    //   displayList.innerHTML = "Nothing To Add";
+    // }
   },
   changeTodo: function() {
     const changeTodoPosition = document.getElementById("changeTodoPosition");
@@ -54,7 +68,7 @@ var handlers = {
     }
 
     todoList.changeTodo(changeTodoPosition.valueAsNumber, changeTodoText.value);
-    // Clear Input
+    //* Clear Input
     changeTodoPosition.value = "";
     changeTodoText.value = "";
     views.displayTodos();
@@ -93,7 +107,7 @@ let views = {
     let todoUl = document.getElementById("displayList");
     todoUl.innerHTML = "";
 
-    // If No Todos, display Empty Message
+    //* If No Todos, display Empty Message
     if (todoList.todos.length === 0) {
       displayList.innerHTML = "Todo List Is Empty, Please Add Todo";
     }

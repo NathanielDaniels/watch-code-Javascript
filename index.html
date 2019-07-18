@@ -13,11 +13,13 @@
     <h1>Javascript</h1>
 
     <div class="content">
+      <!--* Add Todo *-->
       <div>
         <button onclick="handlers.addTodo()">Add</button>
         <input id="addTodoTextInput" type="text" />
       </div>
 
+      <!--* Change Todo *-->
       <div class="changeBtn">
         <button onclick="handlers.changeTodo()">
           Change Todo
@@ -26,18 +28,21 @@
         <input id="changeTodoTextInput" type="text" />
       </div>
 
+      <!--* Toggle Todo *-->
       <div>
         <button onclick="handlers.toggleTodo()">Toggle Todo</button>
         <input id="toggleTodoPosition" type="number" />
         <!-- <input id="changeTodoTextInput" type="text" /> -->
       </div>
 
+      <!--* Toggle All *-->
       <div class="buttons">
         <button class="toggleAllBtn" onclick="handlers.toggleAll()">
           Toggle All
         </button>
       </div>
 
+      <!--* Display Todos *-->
       <div class="listContainer" id="listContainer">
         <ul id="displayList" class="displayList"></ul>
       </div>
