@@ -26,7 +26,7 @@ let todoList = {
       }
     });
 
-    //* This is the same as the forEach() below
+    //* Old forEach ( This is the same as the NEW forEach() below )
     // if (completedTodos === totalTodos) {
     //   this.todos.forEach(function(todo) {
     //     todo.completed = false;
@@ -112,9 +112,26 @@ let views = {
       displayList.innerHTML = "Todo List Is Empty, Please Add Todo";
     }
 
-    for (i = 0; i < todoList.todos.length; i++) {
+    //* Old For Loop ( This is the same as the forEach() below )
+    // for (i = 0; i < todoList.todos.length; i++) {
+    //   let todoLi = document.createElement("li");
+    //   let todo = todoList.todos[i];
+    //   var todoTextWithCompletion = "";
+
+    //   if (todo.completed === true) {
+    //     todoTextWithCompletion = `(x) ${todo.todoText}`;
+    //   } else {
+    //     todoTextWithCompletion = `( ) ${todo.todoText}`;
+    //   }
+
+    //   todoLi.id = i;
+    //   todoLi.textContent = todoTextWithCompletion;
+    //   todoLi.appendChild(this.createDeleteBtn());
+    //   todoUl.appendChild(todoLi);
+    // }
+
+    todoList.todos.forEach(function(todo, position) {
       let todoLi = document.createElement("li");
-      let todo = todoList.todos[i];
       var todoTextWithCompletion = "";
 
       if (todo.completed === true) {
@@ -123,11 +140,11 @@ let views = {
         todoTextWithCompletion = `( ) ${todo.todoText}`;
       }
 
-      todoLi.id = i;
+      todoLi.id = position; //* position replaces [i]
       todoLi.textContent = todoTextWithCompletion;
       todoLi.appendChild(this.createDeleteBtn());
       todoUl.appendChild(todoLi);
-    }
+    }, this); //* 'this' here refers back to the views
   },
   createDeleteBtn: function() {
     var deleteButton = document.createElement("button");
@@ -198,3 +215,11 @@ views.setupEventListeners();
 // };
 
 // var theProductOf2And10 = multiplyTwoNumbers(2, 10);
+
+// let name = {
+//   names: ["nathan", "Steve", "Dave"]
+// };
+
+// name.names.forEach(function(names) {
+//   console.log(names);
+// });
