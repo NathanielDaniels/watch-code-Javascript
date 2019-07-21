@@ -223,3 +223,44 @@ views.setupEventListeners();
 // name.names.forEach(function(names) {
 //   console.log(names);
 // });
+
+// fire = bool => {
+//   let foo = "bar";
+//   if (bool) {
+//     // var foo = "bar";
+//     console.log(foo);
+//   } else {
+//     console.log(foo);
+//   }
+// };
+
+// fire(false);
+
+// var hero = {
+//   name: "john Doe",
+//   getSecretIdentity: function() {
+//     return this.name;
+//   }
+// };
+
+// var stoleSecretIdentity = hero.getSecretIdentity.bind(hero);
+
+// console.log(stoleSecretIdentity());
+// console.log(hero.getSecretIdentity());
+
+// let vals = [1, 2, 3, undefined, 4, 5];
+
+// function isEven(num) {
+//   if (num % 2 == 0) {
+//     return true;
+//   } else {
+//     return "Number is Odd";
+//   }
+// }
+
+// isOdd = x => x % 2 != 0;
+
+// evenVals = vals.filter(isEven);
+// vals = vals.filter(x => !(x % 2));
+
+// console.log(vals);
