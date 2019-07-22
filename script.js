@@ -264,3 +264,31 @@ views.setupEventListeners();
 // vals = vals.filter(x => !(x % 2));
 
 // console.log(vals);
+
+// let counter1;
+
+class Counter {
+  constructor() {
+    this.count = 0;
+    this.p = document.querySelector("p");
+  }
+
+  countIt() {
+    this.count++;
+    this.p.innerText = this.count;
+  }
+}
+
+function setup() {
+  const counter1 = new Counter();
+  draw();
+}
+
+function draw() {
+  new Counter().countIt();
+}
+
+let counter1;
+
+setup();
+// let counter1;
