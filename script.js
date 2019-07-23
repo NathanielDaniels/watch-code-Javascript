@@ -265,30 +265,42 @@ views.setupEventListeners();
 
 // console.log(vals);
 
-// let counter1;
-
 class Counter {
-  constructor() {
-    this.count = 0;
-    this.p = document.querySelector("p");
+  constructor(start, wait) {
+    this.count = start;
+    // this.p = document.createElement("p");
+    this.p = document.querySelector(".lrnClass");
+
+    // let p = document.createElement("p");
+    // let node = document.createTextNode(this.count);
+    // p.appendChild(node);
+
+    // let element = document.querySelector(".lrnClass");
+    // element.appendChild(p);
+
+    setInterval(() => {
+      this.count++;
+      this.p.innerText = this.count;
+    }, wait);
   }
-
-  countIt() {
-    this.count++;
-    this.p.innerText = this.count;
-  }
 }
 
-function setup() {
-  const counter1 = new Counter();
-  draw();
+function setup1() {
+  const counter1 = new Counter(0, 1000);
 }
 
-function draw() {
-  new Counter().countIt();
-}
+setup1();
 
-let counter1;
+// function setup1() {
+//   const counter1 = new Counter(100, 500);
+// }
+// function setup2() {
+//   const counter2 = new Counter(200, 500);
+// }
+// function setup3() {
+//   const counter3 = new Counter(300, 500);
+// }
 
-setup();
-// let counter1;
+// setup1();
+// setup2();
+// setup3();
