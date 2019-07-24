@@ -289,7 +289,7 @@ function setup1() {
   const counter1 = new Counter(0, 1000);
 }
 
-setup1();
+// ! setup1();
 
 // function setup1() {
 //   const counter1 = new Counter(100, 500);
@@ -304,3 +304,35 @@ setup1();
 // setup1();
 // setup2();
 // setup3();
+
+// const twoSum = (nums, target) => {
+//   debugger;
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         return [i, j];
+//       }
+//     }
+//   }
+// };
+//============================================================
+//Add two sums together to equal a selected Value
+const twoSum2 = (nums, target) => {
+  let diff = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (diff.hasOwnProperty(nums[i])) return [diff[nums[i]], i];
+    diff[target - nums[i]] = i;
+  }
+};
+
+console.log(twoSum2([2, 7, 11, 15], 26));
+
+//============================================================
+
+const nameParts = ["Mrs.", "Anne", "Marie", "Stuart"];
+
+// const [salutation, firstName, middleName, lastName] = nameParts;
+
+const [first, second, , last] = nameParts;
+
+console.log(`hello ${first} ${second} ${last}!`);
