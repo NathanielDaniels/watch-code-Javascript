@@ -317,22 +317,24 @@ function setup1() {
 // };
 //============================================================
 //Add two sums together to equal a selected Value
-const twoSum2 = (nums, target) => {
-  let diff = {};
-  for (let i = 0; i < nums.length; i++) {
-    if (diff.hasOwnProperty(nums[i])) return [diff[nums[i]], i];
-    diff[target - nums[i]] = i;
-  }
-};
+// const twoSum2 = (nums, target) => {
+//   let diff = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     if (diff.hasOwnProperty(nums[i])) return [diff[nums[i]], i];
+//     diff[target - nums[i]] = i;
+//   }
+// };
 
-console.log(twoSum2([2, 7, 11, 15], 26));
+// console.log(twoSum2([2, 7, 11, 15], 26));
 
 //============================================================
 
-const nameParts = ["Mrs.", "Anne", "Marie", "Stuart"];
+// const nameParts = ["Mrs.", "Anne", "Marie", "Stuart"];
 
 // const [salutation, firstName, middleName, lastName] = nameParts;
 
-const [first, second, , last] = nameParts;
+// const [first, second, , last] = nameParts;
 
-console.log(`hello ${first} ${second} ${last}!`);
+// console.log(`hello ${first} ${second} ${last}!`);
+
+//============================================================
