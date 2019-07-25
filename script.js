@@ -338,3 +338,18 @@ function setup1() {
 // console.log(`hello ${first} ${second} ${last}!`);
 
 //============================================================
+
+// function multiplier(factor) {
+//   return x => x * factor;
+// }
+
+// let doubler = multiplier(2);
+
+// doubler(4);
+
+let sum = 0;
+let numbers = [1, 2, 3, 4, 5];
+
+const add = (a, b) => a + b;
+
+console.log(numbers.reduce(add));
