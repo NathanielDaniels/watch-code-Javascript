@@ -347,9 +347,30 @@ function setup1() {
 
 // doubler(4);
 
+//============================================================
+//! Learning Reduce()
+
 let sum = 0;
 let numbers = [1, 2, 3, 4, 5];
-
-const add = (a, b) => a + b;
+const add = (a, b) => a * b;
 
 console.log(numbers.reduce(add));
+
+//============================================================
+
+//! Learning Map()
+
+// var animals = [
+//   { name: "Fluffykins", species: "rabbit" },
+//   { name: "Caro", species: "dog" },
+//   { name: "Hamilton", species: "dog" },
+//   { name: "Harold", species: "fish" },
+//   { name: "Ursula", species: "cat" },
+//   { name: "Jimmy", species: "fish" }
+// ];
+
+// let animalNames = animals.map(x => x.name);
+
+// let eachAnimal = animals.map(x => `${x.name} is a ${x.species}`);
+
+// console.log(eachAnimal);
