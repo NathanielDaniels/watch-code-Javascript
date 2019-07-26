@@ -411,6 +411,20 @@ let dog = {
   }
 };
 
-// You Must bind (dog.talk) to dog object
+//* You Must bind (dog.talk) to dog object
 let dogTalk = dog.talk.bind(dog);
 dogTalk();
+
+let button = document.createElement("button");
+let buttonName = document.createTextNode("button");
+button.appendChild(buttonName);
+
+document.getElementById("test").appendChild(button);
+console.log(button);
+
+button.addEventListener("click", function() {
+  document.getElementById("p").innerText = dog.sound;
+});
+
+// let p = document.getElementById("p").innerText;
+// console.log(p);
