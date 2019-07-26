@@ -339,26 +339,52 @@ function setup1() {
 
 //============================================================
 
-// function multiplier(factor) {
-//   return x => x * factor;
-// }
-
-// let doubler = multiplier(2);
-
-// doubler(4);
-
 //============================================================
 //! Learning Reduce()
 
-let sum = 0;
-let numbers = [1, 2, 3, 4, 5];
-const add = (a, b) => a * b;
+// let sum = 0;
+// let numbers = [1, 2, 3, 4, 5];
 
-console.log(numbers.reduce(add));
+// let reduction = numbers.reduce((a, b) => a - b);
+
+// console.log(reduction);
+
+// let orders = [
+//   { amount: 250 },
+//   { amount: 400 },
+//   { amount: 100 },
+//   { amount: 325 }
+// ];
+
+// let totalAmount = 0;
+// for (let i = 0; i < orders.length; i++) {
+//   totalAmount += orders[i].amount;
+// }
+
+// console.log(totalAmount);
+
+// let totalAmount = orders.reduce((x, order) => x + order.amount, 0);
+
+// console.log(totalAmount);
 
 //============================================================
+//! using Map() with fill()
+
+// vals = Array(100)
+//   .fill()
+//   .map(Math.random);
+
+// console.log(vals);
 
 //! Learning Map()
+
+// let vals = [1, 2, 3, 4, 5];
+
+// multiplier = x => x * 2;
+
+// let doubler = vals.map(multiplier);
+
+// console.log(doubler);
 
 // var animals = [
 //   { name: "Fluffykins", species: "rabbit" },
@@ -374,3 +400,17 @@ console.log(numbers.reduce(add));
 // let eachAnimal = animals.map(x => `${x.name} is a ${x.species}`);
 
 // console.log(eachAnimal);
+
+//============================================================
+//! using bind()
+
+let dog = {
+  sound: "woof",
+  talk: function() {
+    console.log(this.sound);
+  }
+};
+
+// You Must bind (dog.talk) to dog object
+let dogTalk = dog.talk.bind(dog);
+dogTalk();
