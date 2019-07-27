@@ -415,15 +415,17 @@ let dog = {
 let dogTalk = dog.talk.bind(dog);
 dogTalk();
 
+//* create button, add click event that...
 let button = document.createElement("button");
 let buttonName = document.createTextNode("button");
 button.appendChild(buttonName);
-
 document.getElementById("test").appendChild(button);
-console.log(button);
+
+let para = document.createElement("p");
+let paraText = (para.innerText = dog.sound);
 
 button.addEventListener("click", function() {
-  document.getElementById("p").innerText = dog.sound;
+  document.getElementById("test").appendChild(para);
 });
 
 // let p = document.getElementById("p").innerText;
