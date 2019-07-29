@@ -451,3 +451,7 @@ console.log(li_array);
 li_array.pop();
 
 console.log(li_array);
+
+li_array.pop();
+
+console.log(li_array);
