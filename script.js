@@ -404,32 +404,32 @@ function setup1() {
 //============================================================
 //! using bind()
 
-// let dog = {
-//   sound: "woof",
-//   talk: function() {
-//     console.log(this.sound);
-//   }
-// };
+let dog = {
+  sound: "woof",
+  talk: function() {
+    console.log(this.sound);
+  }
+};
 
-// //* You Must bind (dog.talk) to dog object
-// let dogTalk = dog.talk.bind(dog);
-// dogTalk();
+//* You Must bind (dog.talk) to dog object
+let dogTalk = dog.talk.bind(dog);
+dogTalk();
 
-// //* create button, add click event that displays dog.sound
-// let button = document.createElement("button");
-// let buttonName = document.createTextNode("button");
-// button.appendChild(buttonName);
-// document.getElementById("test").appendChild(button);
+//* create button, add click event that displays dog.sound
+let button = document.createElement("button");
+let buttonName = document.createTextNode("button");
+button.appendChild(buttonName);
+document.getElementById("test").appendChild(button);
 
-// let para = document.createElement("p");
-// let paraText = (para.innerText = dog.sound);
+let para = document.createElement("p");
+let paraText = (para.innerText = dog.sound);
 
-// button.addEventListener("click", function() {
-//   document.getElementById("test").appendChild(para);
-// });
+button.addEventListener("click", function() {
+  document.getElementById("test").appendChild(para);
+});
 
-// let p = document.getElementById("p").innerText;
-// console.log(p);
+let p = document.getElementById("p").innerText;
+console.log(p);
 
 //============================================================
 //!
