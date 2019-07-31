@@ -289,7 +289,7 @@ function setup1() {
   const counter1 = new Counter(0, 1000);
 }
 
-// ! setup1();
+!setup1();
 
 // function setup1() {
 //   const counter1 = new Counter(100, 500);
