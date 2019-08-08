@@ -469,11 +469,31 @@
 // console.log(toNumber);
 
 //==================================================
+//! RegEx
 
-let str = "I love JavaScript";
+// let str = "I love JavaScript";
 
-let regex = /java|php|JavaScript/;
+// let regex = /java|php|JavaScript/;
 
-let result = str.match(regex);
+// let result = str.match(regex);
 
-console.log(result);
+// console.log(result);
+
+//==================================================
+//! Create Server
+
+let http = require("http"); //access to HTTP module (to create server)
+let ourApp = http.createServer(function(req, res) {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  // console.log(req.url);
+  if (req.url == "/") {
+    res.end("Hello, and Welcome to our Homepage");
+  }
+  if (req.url == "/about") {
+    res.end("About Page");
+  }
+
+  
+});
+
+ourApp.listen(3000);
