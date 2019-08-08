@@ -483,14 +483,15 @@
 //! Create Server
 
 let http = require("http"); //access to HTTP module (to create server)
-let dt = require("./myfirstmodule");
+let dt = require("./node.js/myfirstmodule");
 
 http
   .createServer(function(req, res) {
     res.writeHead(200, { "Content-Type": "text/html" });
     //* Homepage
     if (req.url == "/") {
-      res.end(`Hello, and Welcome to our Homepage ${dt.myDateTime()}`);
+      res.write(`Hello, and Welcome to our Homepage ${dt.myDateTime()}`);
+      res.end();
     }
     //* About
     if (req.url == "/about") {
