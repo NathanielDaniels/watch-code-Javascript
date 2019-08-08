@@ -483,17 +483,16 @@
 //! Create Server
 
 let http = require("http"); //access to HTTP module (to create server)
+let dt = require("./myfirstmodule");
 let ourApp = http.createServer(function(req, res) {
   res.writeHead(200, { "Content-Type": "text/html" });
   // console.log(req.url);
   if (req.url == "/") {
-    res.end("Hello, and Welcome to our Homepage");
+    res.end(`Hello, and Welcome to our Homepage ${dt.myDateTime()}`);
   }
   if (req.url == "/about") {
     res.end("About Page");
   }
-
-  
 });
 
 ourApp.listen(3000);
