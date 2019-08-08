@@ -484,15 +484,17 @@
 
 let http = require("http"); //access to HTTP module (to create server)
 let dt = require("./myfirstmodule");
-let ourApp = http.createServer(function(req, res) {
-  res.writeHead(200, { "Content-Type": "text/html" });
-  // console.log(req.url);
-  if (req.url == "/") {
-    res.end(`Hello, and Welcome to our Homepage ${dt.myDateTime()}`);
-  }
-  if (req.url == "/about") {
-    res.end("About Page");
-  }
-});
 
-ourApp.listen(3000);
+http
+  .createServer(function(req, res) {
+    res.writeHead(200, { "Content-Type": "text/html" });
+    //* Homepage
+    if (req.url == "/") {
+      res.end(`Hello, and Welcome to our Homepage ${dt.myDateTime()}`);
+    }
+    //* About
+    if (req.url == "/about") {
+      res.end("About Page");
+    }
+  })
+  .listen(3000);
