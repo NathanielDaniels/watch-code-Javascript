@@ -480,22 +480,47 @@
 // console.log(result);
 
 //==================================================
-//! Create Server
+//! If Statements
 
-let http = require("http"); //access to HTTP module (to create server)
-let dt = require("./node.js/myfirstmodule");
+// let computer = amount => {
+//   if (amount === 1) {
+//     console.log(`the Computer is $200 USD`);
+//   } else if (amount === 2) {
+//     console.log(
+//       `the Computers are $195 USD Each. Your total = $${eval(2 * 195)}`
+//     );
+//   } else if (amount === 3) {
+//     console.log(
+//       `the Computers are $190 USD Each. Your total = $${eval(3 * 190)}`
+//     );
+//   }
+// };
 
-http
-  .createServer(function(req, res) {
-    res.writeHead(200, { "Content-Type": "text/html" });
-    //* Homepage
-    if (req.url == "/") {
-      res.write(`Hello, and Welcome to our Homepage ${dt.myDateTime()}`);
-      res.end();
-    }
-    //* About
-    if (req.url == "/about") {
-      res.end("About Page");
-    }
-  })
-  .listen(3000);
+// computer(1);
+// computer(2);
+// computer(3);
+
+computer = amount => {
+  switch (amount) {
+    case 1:
+      console.log(`the Computer is $200 USD`);
+      break;
+    case 2:
+      console.log(
+        `the Computers are $195 USD Each. Your total = $${eval(2 * 195)}`
+      );
+      break;
+    case 3:
+      console.log(
+        `the Computers are $195 USD Each. Your total = $${eval(3 * 190)}`
+      );
+      break;
+    default:
+      console.log("Only deals on 1-3");
+  }
+};
+
+computer(1);
+computer(2);
+computer(3);
+computer(4);
