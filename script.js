@@ -480,7 +480,7 @@
 // console.log(result);
 
 //==================================================
-//! If Statements
+//! If/Switch Statements
 
 // let computer = amount => {
 //   if (amount === 1) {
@@ -500,26 +500,38 @@
 // computer(2);
 // computer(3);
 
-students = grade => {
-  switch (grade) {
-    case "A":
-      console.log(`You got an A, so here is an Ironman sticker for you!`);
-      break;
-    case "B":
-      console.log(
-        `You got a B, so here is the Captain America sticker for you!`
-      );
-      break;
-    case "C":
-      console.log(
-        `You got a C, study better and here is your Spiderman sticker!`
-      );
-      break;
-    default:
-      console.log("No Sticker For YOU!");
-  }
-};
+//=========================
 
-students("A");
-students("B");
-students("C");
+// students = grade => {
+//   switch (grade) {
+//     case "A":
+//       console.log(`You got an A, so here is an Ironman sticker for you!`);
+//       break;
+//     case "B":
+//       console.log(
+//         `You got a B, so here is the Captain America sticker for you!`
+//       );
+//       break;
+//     case "C":
+//       console.log(
+//         `You got a C, study better and here is your Spiderman sticker!`
+//       );
+//       break;
+//     default:
+//       console.log("No Sticker For YOU!");
+//   }
+// };
+
+// students("A");
+// students("B");
+// students("C");
+
+//==================================================
+//! Loop Statements
+
+let i = 1;
+
+while (i < 11) {
+  console.log(i);
+  i++;
+}
