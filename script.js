@@ -516,7 +516,7 @@ computer = amount => {
       );
       break;
     default:
-      console.log("Only deals on 1-3");
+      console.log("Deals only apply up to 3 computers per customer");
   }
 };
 
