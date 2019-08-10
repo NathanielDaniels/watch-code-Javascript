@@ -500,27 +500,26 @@
 // computer(2);
 // computer(3);
 
-computer = amount => {
-  switch (amount) {
-    case 1:
-      console.log(`the Computer is $200 USD`);
+students = grade => {
+  switch (grade) {
+    case "A":
+      console.log(`You got an A, so here is an Ironman sticker for you!`);
       break;
-    case 2:
+    case "B":
       console.log(
-        `the Computers are $195 USD Each. Your total = $${eval(2 * 195)}`
+        `You got a B, so here is the Captain America sticker for you!`
       );
       break;
-    case 3:
+    case "C":
       console.log(
-        `the Computers are $195 USD Each. Your total = $${eval(3 * 190)}`
+        `You got a C, study better and here is your Spiderman sticker!`
       );
       break;
     default:
-      console.log("Deals only apply up to 3 computers per customer");
+      console.log("No Sticker For YOU!");
   }
 };
 
-computer(1);
-computer(2);
-computer(3);
-computer(4);
+students("A");
+students("B");
+students("C");
