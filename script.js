@@ -552,11 +552,15 @@ function generatePyramid() {
 generatePyramid();
 
 function generatePyramidReverse() {
-  // var totalNumberofRows = 5;
-  // var output = "";
-  for (var i = 1; i <= 6; i++) {
+  var totalNumberofRows = 5;
+  var output = "";
+  for (var i = 1; i <= totalNumberofRows; i++) {
     for (var x = 5; x >= i; x--) {
-      "*" + " ";
+      output += "*" + " ";
     }
+    console.log(output);
+    output = "";
   }
 }
+
+generatePyramidReverse();
