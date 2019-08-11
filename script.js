@@ -529,9 +529,34 @@
 //==================================================
 //! Loop Statements
 
-let i = 1;
+// let i = 0;
 
-while (i < 11) {
-  console.log(i);
-  i++;
+// do {
+//   console.log("*");
+
+//   i++;
+// } while (i <= 5);
+
+function generatePyramid() {
+  var totalNumberofRows = 5;
+  var output = "";
+  for (var i = 1; i <= totalNumberofRows; i++) {
+    for (var x = 1; x <= i; x++) {
+      output += "*" + " ";
+    }
+    console.log(output);
+    output = "";
+  }
+}
+
+generatePyramid();
+
+function generatePyramidReverse() {
+  // var totalNumberofRows = 5;
+  // var output = "";
+  for (var i = 1; i <= 6; i++) {
+    for (var x = 5; x >= i; x--) {
+      "*" + " ";
+    }
+  }
 }
