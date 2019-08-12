@@ -537,30 +537,53 @@
 //   i++;
 // } while (i <= 5);
 
-function generatePyramid() {
-  var totalNumberofRows = 5;
-  var output = "";
-  for (var i = 1; i <= totalNumberofRows; i++) {
-    for (var x = 1; x <= i; x++) {
-      output += "*" + " ";
-    }
-    console.log(output);
-    output = "";
+// function generatePyramid() {
+//   var totalNumberofRows = 5;
+//   var output = "";
+//   for (var i = 1; i <= totalNumberofRows; i++) {
+//     for (var x = 1; x <= i; x++) {
+//       output += "*" + " ";
+//     }
+//     console.log(output);
+//     output = "";
+//   }
+// }
+
+// generatePyramid();
+
+// function generatePyramidReverse() {
+//   var totalNumberofRows = 5;
+//   var output = "";
+//   for (var i = 1; i <= totalNumberofRows; i++) {
+//     for (var x = 5; x >= i; x--) {
+//       output += "*" + " ";
+//     }
+//     console.log(output);
+//     output = "";
+//   }
+// }
+
+// generatePyramidReverse();
+
+//==================================================
+//! Objects
+
+bird = {
+  name: "birdie",
+  species: "dove",
+  age: 4,
+  address: "my backyard",
+  tweet: function() {
+    console.log("chirp chirp");
+  },
+  describe: function() {
+    console.log(
+      `${this.name} is a ${this.age} year old ${this.species} that lives in ${
+        this.address
+      }`
+    );
   }
-}
+};
 
-generatePyramid();
-
-function generatePyramidReverse() {
-  var totalNumberofRows = 5;
-  var output = "";
-  for (var i = 1; i <= totalNumberofRows; i++) {
-    for (var x = 5; x >= i; x--) {
-      output += "*" + " ";
-    }
-    console.log(output);
-    output = "";
-  }
-}
-
-generatePyramidReverse();
+bird.describe();
+bird.tweet();
