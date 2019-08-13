@@ -571,7 +571,7 @@
 bird = {
   name: "birdie",
   species: "dove",
-  age: 4,
+  age: 5,
   address: "my backyard",
   tweet: function() {
     console.log("chirp chirp");
